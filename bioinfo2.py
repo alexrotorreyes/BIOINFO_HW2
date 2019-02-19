@@ -9,7 +9,7 @@ for x in range(10):
 
     src = s.reverse_complement()
 
-    print('seq %s is %i bases long' % (ctr, len(s)))
+    print('seq %s is %i bases long' % ("1", len(s)))
     print('reverse complement is %s' % s.reverse_complement())
 
     aa = 0
