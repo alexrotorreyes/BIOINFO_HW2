@@ -104,14 +104,14 @@ for x in range(10):
 
         if (ctr1 == 1):
             o = cg / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((c+g) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 2):
             o = gc / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((g+c) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
@@ -125,42 +125,42 @@ for x in range(10):
             print("r: ", r)
         elif (ctr1 == 4):
             o = agct / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((a+t) / len(src)) * ((g+c) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 5):
             o = gatc / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((g+c) / len(src)) * ((a+t) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 6):
             o = catg / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((c+g) / len(src)) * ((a+t) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 7):
             o = acgt / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((a+t) / len(src)) * ((c+g) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 8):
             o = aatt / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((a+t) / len(src)) * ((a+t) / len(src))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 9):
             o = ta / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((t+a) / len(src))
             r = o / e
             # print("c: ", c)
             # print("g: ", g)
@@ -170,7 +170,7 @@ for x in range(10):
             print("r: ", r)
         elif (ctr1 == 10):
             o = at / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((a+t) / len(src))
             r = o / e
             # print("c: ", c)
             # print("g: ", g)
@@ -179,4 +179,3 @@ for x in range(10):
             print("e: ", e)
             print("r: ", r)
 
-        #EXPECTED FREQUENCY
