@@ -1,119 +1,114 @@
 #BIOINFO HW2
 
 from Bio.Seq import Seq
-start = 20000000
-f = open("chr22.txt", "r")
-if f.mode == 'r':
-    for x in range(10):
-        f.seek(start)
-        s = Seq(f.read(50000))
-        s = s.lower()
-        print('seq %s is %i bases long' % (x+1, len(s)))
-        print('start %i' % (start))
-        src = s.reverse_complement()
+for x in range(10):
+    ctr = x+1
+    f = open("s%i.txt" %(ctr), "r")
+    if f.mode == 'r':
+            s = Seq(f.read())
 
-        print('reverse complement is %s' % s.reverse_complement())
-        aa = 0
-        ac = 0
-        at = 0
-        ag = 0
+    src = s.reverse_complement()
 
-        ca = 0
-        cc = 0
-        ct = 0
-        cg = 0
+    print('seq %s is %i bases long' % ("1", len(s)))
+    print('reverse complement is %s' % s.reverse_complement())
 
-        ga = 0
-        gc = 0
-        gt = 0
-        gg = 0
+    aa = 0
+    ac = 0
+    at = 0
+    ag = 0
 
-        ta = 0
-        tc = 0
-        tt = 0
-        tg = 0
+    ca = 0
+    cc = 0
+    ct = 0
+    cg = 0
 
-        ccgg = 0
-        agct = 0
-        gatc = 0
-        catg = 0
-        acgt = 0
-        aatt = 0
+    ga = 0
+    gc = 0
+    gt = 0
+    gg = 0
 
-        a = 0
-        c = 0
-        g = 0
-        t = 0
+    ta = 0
+    tc = 0
+    tt = 0
+    tg = 0
 
-        aa = src.count_overlap("aa")
-        ac = src.count_overlap("ac")
-        at = src.count_overlap("at")
-        ag = src.count_overlap("ag")
+    ccgg = 0
+    agct = 0
+    gatc = 0
+    catg = 0
+    acgt = 0
+    aatt = 0
 
-        ca = src.count_overlap("ca")
-        cc = src.count_overlap("cc")
-        ct = src.count_overlap("ct")
-        cg = src.count_overlap("cg")
+    a = 0
+    c = 0
+    g = 0
+    t = 0
 
-        ga = src.count_overlap("ga")
-        gc = src.count_overlap("gc")
-        gt = src.count_overlap("gt")
-        gg = src.count_overlap("gg")
+    aa = src.count_overlap("aa")
+    ac = src.count_overlap("ac")
+    at = src.count_overlap("at")
+    ag = src.count_overlap("ag")
 
-        ta = src.count_overlap("ta")
-        tc = src.count_overlap("tc")
-        tt = src.count_overlap("tt")
-        tg = src.count_overlap("tg")
+    ca = src.count_overlap("ca")
+    cc = src.count_overlap("cc")
+    ct = src.count_overlap("ct")
+    cg = src.count_overlap("cg")
 
-        a = src.count_overlap("a")
-        c = src.count_overlap("c")
-        t = src.count_overlap("t")
-        g = src.count_overlap("g")
+    ga = src.count_overlap("ga")
+    gc = src.count_overlap("gc")
+    gt = src.count_overlap("gt")
+    gg = src.count_overlap("gg")
 
-        ccgg = cc + gg
-        agct = ag + ct
-        gatc = ga + tc
-        catg = ca + tg
-        acgt = ac + gt
-        aatt = aa + tt
+    ta = src.count_overlap("ta")
+    tc = src.count_overlap("tc")
+    tt = src.count_overlap("tt")
+    tg = src.count_overlap("tg")
 
-        total = aa + ac + at + ag + ca + cc + ct + cg + ga + gc + gt + gg + ta + tc + tt + tg
+    a = src.count_overlap("a")
+    c = src.count_overlap("c")
+    t = src.count_overlap("t")
+    g = src.count_overlap("g")
 
-        print("aa: ", aa)
-        print("ac: ", ac)
-        print("at: ", at)
-        print("ag: ", ag)
+    ccgg = cc + gg
+    agct = ag + ct
+    gatc = ga + tc
+    catg = ca + tg
+    acgt = ac + gt
+    aatt = aa + tt
 
-        print("ca: ", ca)
-        print("cc: ", cc)
-        print("ct: ", ct)
-        print("cg: ", cg)
+    total = aa + ac + at + ag + ca + cc + ct + cg + ga + gc + gt + gg + ta + tc + tt + tg
 
-        print("ga: ", ga)
-        print("gc: ", gc)
-        print("gt: ", gt)
-        print("gg: ", gg)
+    print("aa: ", aa)
+    print("ac: ",  ac)
+    print("at: ",  at)
+    print("ag: ",  ag)
 
-        print("ta: ", ta)
-        print("tc: ", tc)
-        print("tt: ", tt)
-        print("tg: ", tg)
+    print("ca: ", ca)
+    print("cc: ", cc)
+    print("ct: ", ct)
+    print("cg: ", cg)
 
-        print("total: ", total)
+    print("ga: ", ga)
+    print("gc: ", gc)
+    print("gt: ", gt)
+    print("gg: ", gg)
 
-        # OBSERVED FREQUENCY
-        o = cg/total
+    print("ta: ", ta)
+    print("tc: ", tc)
+    print("tt: ", tt)
+    print("tg: ", tg)
 
-        # EXPECTED FREQUENCY
-        e = (c/len(src))*(g/len(src))
+    print("total: ", total)
 
-        r = o/e
-
-        print("o: ", o)
-        print("e: ", e)
-        print("r: ", r)
-        start = start + 50000
+    #OBSERVED FREQUENCY
+    o = cg/total
 
 
+    #EXPECTED FREQUENCY
+    e = (c/len(src))*(g/len(src))
 
+    r = o/e
 
+    print("o: ", o)
+    print("e: ", e)
+    print("r: ", r)
