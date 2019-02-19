@@ -9,8 +9,8 @@ for x in range(10):
     for y in range(10):
         ctr1 = y +1
         src = s.reverse_complement()
-        print('loop %i of loop %i' % (ctr1,ctr))
-        print('seq %s is %i bases long' % ("ctr", len(s)))
+        print('loop %i of string %i' % (ctr1,ctr))
+        print('seq %s is %i bases long' % (ctr, len(s)))
         print('reverse complement is %s' % s.reverse_complement())
 
         aa = 0
@@ -162,9 +162,9 @@ for x in range(10):
             o = ta / total
             e = (c / len(src)) * (g / len(src))
             r = o / e
-            print("c: ", c)
-            print("g: ", g)
-            print("len: ", len(src))
+            # print("c: ", c)
+            # print("g: ", g)
+            # print("len: ", len(src))
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
@@ -172,9 +172,9 @@ for x in range(10):
             o = at / total
             e = (c / len(src)) * (g / len(src))
             r = o / e
-            print("c: ", c)
-            print("g: ", g)
-            print("len: ", len(src))
+            # print("c: ", c)
+            # print("g: ", g)
+            # print("len: ", len(src))
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
