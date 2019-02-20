@@ -6,9 +6,12 @@ for x in range(10):
     f = open("s%i.txt" %(ctr), "r")
     if f.mode == 'r':
             s = Seq(f.read())
+    src = s.reverse_complement()
+
     for y in range(10):
         ctr1 = y +1
         src = s.reverse_complement()
+        s_new = s + src
         print('loop %i of string %i' % (ctr1,ctr))
         print('seq %s is %i bases long' % (ctr, len(s)))
         print('reverse complement is %s' % s.reverse_complement())
@@ -45,30 +48,30 @@ for x in range(10):
         g = 0
         t = 0
 
-        aa = src.count_overlap("aa")
-        ac = src.count_overlap("ac")
-        at = src.count_overlap("at")
-        ag = src.count_overlap("ag")
+        aa = s_new.count_overlap("aa")
+        ac = s_new.count_overlap("ac")
+        at = s_new.count_overlap("at")
+        ag = s_new.count_overlap("ag")
 
-        ca = src.count_overlap("ca")
-        cc = src.count_overlap("cc")
-        ct = src.count_overlap("ct")
-        cg = src.count_overlap("cg")
+        ca = s_new.count_overlap("ca")
+        cc = s_new.count_overlap("cc")
+        ct = s_new.count_overlap("ct")
+        cg = s_new.count_overlap("cg")
 
-        ga = src.count_overlap("ga")
-        gc = src.count_overlap("gc")
-        gt = src.count_overlap("gt")
-        gg = src.count_overlap("gg")
+        ga = s_new.count_overlap("ga")
+        gc = s_new.count_overlap("gc")
+        gt = s_new.count_overlap("gt")
+        gg = s_new.count_overlap("gg")
 
-        ta = src.count_overlap("ta")
-        tc = src.count_overlap("tc")
-        tt = src.count_overlap("tt")
-        tg = src.count_overlap("tg")
+        ta = s_new.count_overlap("ta")
+        tc = s_new.count_overlap("tc")
+        tt = s_new.count_overlap("tt")
+        tg = s_new.count_overlap("tg")
 
-        a = src.count_overlap("a")
-        c = src.count_overlap("c")
-        t = src.count_overlap("t")
-        g = src.count_overlap("g")
+        a = s_new.count_overlap("a")
+        c = s_new.count_overlap("c")
+        t = s_new.count_overlap("t")
+        g = s_new.count_overlap("g")
 
         ccgg = cc + gg
         agct = ag + ct
@@ -104,63 +107,63 @@ for x in range(10):
 
         if (ctr1 == 1):
             o = cg / total
-            e = ((c+g) / len(src))
+            e = ((c+g) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 2):
             o = gc / total
-            e = ((g+c) / len(src))
+            e = ((g+c) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 3):
             o = ccgg / total
-            e = (c / len(src)) * (g / len(src))
+            e = ((c+g) / len(s_new)) * ((c+g) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 4):
             o = agct / total
-            e = ((a+t) / len(src)) * ((g+c) / len(src))
+            e = ((a+t) / len(s_new)) * ((g+c) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 5):
             o = gatc / total
-            e = ((g+c) / len(src)) * ((a+t) / len(src))
+            e = ((g+c) / len(s_new)) * ((a+t) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 6):
             o = catg / total
-            e = ((c+g) / len(src)) * ((a+t) / len(src))
+            e = ((c+g) / len(s_new)) * ((a+t) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 7):
             o = acgt / total
-            e = ((a+t) / len(src)) * ((c+g) / len(src))
+            e = ((a+t) / len(s_new)) * ((c+g) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 8):
             o = aatt / total
-            e = ((a+t) / len(src)) * ((a+t) / len(src))
+            e = ((a+t) / len(s_new)) * ((a+t) / len(s_new))
             r = o / e
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
         elif (ctr1 == 9):
             o = ta / total
-            e = ((t+a) / len(src))
+            e = ((t+a) / len(s_new))
             r = o / e
             # print("c: ", c)
             # print("g: ", g)
@@ -170,11 +173,11 @@ for x in range(10):
             print("r: ", r)
         elif (ctr1 == 10):
             o = at / total
-            e = ((a+t) / len(src))
+            e = ((a+t) / len(s_new))
             r = o / e
             # print("c: ", c)
             # print("g: ", g)
-            # print("len: ", len(src))
+            # print("len: ", len(s_new))
             print("o: ", o)
             print("e: ", e)
             print("r: ", r)
