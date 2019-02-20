@@ -6,14 +6,13 @@ for x in range(10):
     f = open("s%i.txt" %(ctr), "r")
     if f.mode == 'r':
             s = Seq(f.read())
-    src = s.reverse_complement()
 
     for y in range(10):
         ctr1 = y +1
         src = s.reverse_complement()
         s_new = s + src
-        print('loop %i of string %i' % (ctr1,ctr))
-        print('seq %s is %i bases long' % (ctr, len(s)))
+        print('loop %i of string %i' % (ctr1, ctr))
+        print('string %s is %i bases long' % (ctr, len(s)))
         print('reverse complement is %s' % s.reverse_complement())
 
         aa = 0
